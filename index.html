@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rammy가 LAMY를 클론코딩</title>
+  <link rel="stylesheet" href="lamy.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){ 
+        //section 4 : BEST
+      $(".next4").click(function(){ 
+        $(".panel4").stop().animate({"margin-left":"-698px"},500,function(){
+          $(".panel4>li").first().appendTo(".panel4");
+          $(".panel4").css({"margin-left":"-369px"});
+        });
+      });
+      
+      $(".prev4").click(function(){
+        $(".panel4").stop().animate({"margin-left":"0px"},500,function(){
+          $(".panel4>li").last().prependTo(".panel4");
+          $(".panel4").css({"margin-left":"-369px"});
+        });
+      });
+
+      //section 6 : EVENT
+      $(".sec6_next").click(function(){ 
+        $(".panel").stop().animate({"margin-left":"-984px"},500,function(){
+          $(".panel>li").first().appendTo(".panel");
+          $(".panel").css({"margin-left":"-492px"});
+        });
+      });
+
+      $(".sec6_prev").click(function(){
+        $(".panel").stop().animate({"margin-left":"0px"},500,function(){
+          $(".panel>li").last().prependTo(".panel");
+          $(".panel").css({"margin-left":"-492px"});
+        });
+      });
+
+      setInterval(autoSlide,1500);
+      function autoSlide(){
+        $(".panel").stop().animate({"margin-left":"-984px"},1500,function(){
+        $(".panel>li").first().appendTo(".panel");
+        $(".panel").css({"margin-left":"-492px"});
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header">
+    <ul class="gnb">
+      <li class="hd_ham"><a href="#"><img src="images/hd_ham_btn.svg" alt=""></a></li>
+      <li><a href="#"><h1><img src="images/hd_logo.svg" alt=""></h1></a></li>
+    </ul>
+    <ul class="last_gnb">
+      <li><img src="images/hd_search_btn.svg" alt=""></li>
+      <li><img src="images/hd_cart_btn.svg" alt=""></li>
+      <li><img src="images/hd_mypage_icon.svg" alt=""></li>
+    </ul>
+    
+  </div>
+
+
+  <div id="section">
+    <div class="sec1">
+      <div class="mainvideo">
+        <iframe 
+          src="https://player.vimeo.com/video/1077833426?h=2c83d2668e&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+          width="100%"
+          height="1000"
+          allowfullscreen
+          >
+  </iframe>
+      </div>
+      <ul class="newprod_txt">
+        <li>사파리 2025 스페셜 에디션 선셋 & 다크 더스크</li>
+        <li>자세히 보기</li>
+      </ul>
+    </div>
+
+
+
+    <div class="sec2">
+      <div class="promotion"><h1>PROMOTION</h1></div>
+      <ul class="promo">
+        <li><a href="#"><img src="images/sec2_bn1.jpg" alt=""></a>
+          <div class="sec2_subtxt">
+            <h1>아이코닉 디자인, 새로운 컬러</h1>
+            <p>따뜻한 산호초를 닮은 선셋, 깊은 바다를 담은 다크 더스크를 만나보세요.</p>
+            <p class="sec2_btn">자세히 보기</p>
+          </div>
+        </li>
+        <li><a href="#"><img src="images/sec2_bn2.jpg" alt=""></a>
+          <div class="sec2_subtxt">
+            <h1>감사의 달 5월</h1>
+            <p>고마운 분들께 전하는 진심. 라미와 함께하는 특별한 5월의 선물 제안</p>
+            <p class="sec2_btn">자세히 보기</p>
+          </div>
+        </li>
+        <li><a href="#"><img src="images/sec2_bn3.jpg" alt=""></a>
+          <div class="sec2_subtxt">
+            <h1>아이를 위한 첫 만년필</h1>
+            <p>처음 글을 배우는 순간부터, 자신 있게 써 내려가는 그다음까지. 아이의 모든 글쓰기, 라미로 시작해보세요.</p>
+            <p class="sec2_btn">자세히 보기</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="sec2side_btn">
+        <li class="prev"><a href="#">&lt;</a></li>
+        <li class="next"><a href="#">&gt;</a></li>
+      </ul>
+    </div>
+
+    <div class="sec3">
+      <div class="prd_line"><h1>PRODUCT LINE</h1></div>
+      <div class="tap_group">
+        <ul class="tap_menu">
+          <li><a href="#">LAMY dialog</a></li>
+          <li><a href="#">LAMY imporium</a></li>
+          <li><a href="#">LAMY 2000</a></li>
+          <li><a href="#">LAMY aion</a></li>
+          <li><a href="#">LAMY studio</a></li>
+          <li><a href="#">LAMY accent</a></li>
+          <li><a href="#">LAMY Lx</a></li>
+          <li><a href="#">LAMY Al-star</a></li>
+          <li><a href="#">LAMY safari</a></li>
+          <li><a href="#">LAMY pico</a></li>
+          <li><a href="#">LAMY swift</a></li>
+          <li><a href="#">LAMY abc</a></li>
+        </ul>
+        <!-- <ul class="tap_show">
+          <li>
+            <div class="prod_desc">
+              <h1>혁신적인 트위스트 액션 방식</h1>
+              <p>8년 연속 굿 디자인 수상 Lamy dialog.
+                <span>Designed By <ins>Franco Clivio</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>개성과 스타일의 아이콘</h1>
+              <p>입체감과 편안한 그립감을 동시에 Lamy imporium.
+                <span>Designed By <ins>Mario Bellini</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>모던 클래식</h1>
+              <p>클래식한 모던함의 대명사 라미 2000.
+                <span>Designed By <ins>Gerd A. Muller</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>단순하고 모던한</h1>
+              <p>미니멀 하면서 진보된 디테일 Lamy aion.
+                <span>Designed By <ins>Jasper Morrison</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>시대를 초월한 완벽함</h1>
+              <p>엘레강스한 디자인과 예술이 만난 산물 Lamy studio.
+                <span>Designed By <ins>Hannes Wettstein</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>개성의 표현</h1>
+              <p>교체 가능한 그립으로 다양한 스타일 Lamy accent.
+                <span>Designed By <ins>Phoenix product design</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>럭셔리 스타일</h1>
+              <p>기능성과 우아함의 완벽한 조화 Lamy Lx.
+                <span>Designed By <ins>Gerd A. Muller</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>초경량 알루미늄 기술</h1>
+              <p>광택의 우아함 Lamy Al-star.
+                <span>Designed By <ins>Wolfgang Fabian</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>차원이 다른 필기감</h1>
+              <p>자타가 공인하는 베스트셀러 Lamy safari.
+                <span>Designed By <ins>Wolfgang Fabian</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>놀랍도록 실용적인</h1>
+              <p>섬세한 푸시 메커니즘을 갖춘 Lamy pico.
+                <span>Designed By <ins>Franco Clivio</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>시선을 사로잡는 디자인</h1>
+              <p>필기감의 장점만을 극대화한 Lamy swift.
+                <span>Designed By <ins>Wolfgang Fabian</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li>
+            <div class="prod_desc">
+              <h1>라미로 배우는 abc</h1>
+              <p>자신만의 서체를 만들어가는 아동을 위한 제품 LAMY abc.
+                <span>Designed By <ins>Entwicklungsgruppe Mannheim / Prof. Bernt Spiegel</ins></span>
+              </p>
+              <p class="sec3_btn">자세히 보기</p>
+            </div>
+          </li>
+        </ul> -->
+      </div>     
+    </div>
+
+<!-- ---------section 444444444 BEST------------------- -->
+    <div class="sec4">
+      <h1 class="sub_title">BEST</h1>
+      <div class="carousel_best">
+        <div class="panel_wrap4">
+          <ul class="panel4">
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd1.png" alt="">
+                <p>사파리 샤프 차콜블랙 <strong>0.5mm</strong></p>
+                <h2><span>10% <del>44,000원</del></span> 39,600원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd2.png" alt="">
+                <p>사파리 만년필 차콜블랙 <strong>EF</strong></p>
+                <h2><span>10% <del>64,000원</del></span> 57,600원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd3.png" alt="">
+                <p>샤프심 HB 12개입 <strong>0.5mm</strong></p>
+                <h2><span><del>6,000원</del></span> 6,000원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd4.png" alt="">
+                <p>사파리 볼펜 샤이니 화이트</p>
+                <h2><span>10% <del>44,000원</del></span> 39,600원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd5.png" alt="">
+                <p>[기프트박스 증정] 스튜디오 볼펜 블랙</p>
+                <h2><span>20% <del>120,000원</del></span> 95,600원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd6.png" alt="">
+                <p>[기프트박스 증정] 2000 만년필 마크롤론<strong>14K EF</strong></p>
+                <h2><span>19% <del>440,000원</del></span> 354,400원</h2>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img src="images/sec4_pd7.png" alt="">
+                <p>사파리 수성펜 차콜블랙</p>
+                <h2><span>10% <del>46,000원</del></span> 41,400원</h2>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="side_btn4">
+          <li class="prev4"></li>
+          <li class="next4"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec5">
+      <h1 class="sub_title">NEW</h1>
+      <div class="sec5_bg">
+        <div class="prod_desc">
+          <h1>al-star, Your Color Monment</h1>
+          <p>매일 같은 공간, 같은 하루가 조금 지루하게 느껴진다면 <br>
+            손에 닿는 컬러 하나를 바꿔보셔도 좋아요.
+          </p>
+          <p class="sec5_btn">자세히 보기</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec6">
+      <h1 class="sub_title">EVENT</h1>
+      <div class="carousel_event">
+        <div class="panel_wrap">
+          <ul class="panel">
+            <li>
+              <a href="#">
+                <img src="images/event1.jpg" alt="">
+                <p class="event">30만원 이상 구매 시</p>
+                <h2>구매 금액별 사은품</h2>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/event2.jpg" alt="">
+                <p class="event">무료 각인 혜택</p>
+                <h2>멤버쉽 10% OFF</h2>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/event3.jpg" alt="">
+                <p class="event">회원 ONLY!</p>
+                <h2>자사몰 전용 선물박스</h2>
+                <p><span>작은 가격으로 큰 감동을 선사하세요</span></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/event4.jpg" alt="">
+                <p class="event">소진시 종료</p>
+                <h2>스페셜 슬리브 증정</h2>
+                <p><span>축하 메시지를 함께 전달해보세요</span></p>
+              </a></li>
+            <li>
+              <a href="#">
+                <img src="images/event5.jpg" alt="">
+                <p class="event">신규회원/기존회원 이벤트</p>
+                <h2>5월 멤버쉽 이벤트</h2>
+                <p><span>2025.05.01-2025.05.31</span></p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/event6.jpg" alt="">
+                <p class="event">제품 수령 후 리뷰를 남겨 주세요!</p>
+                <h2>포토 리뷰 작성 시</h2>
+                <p><span>100% 기프티콘 증정</span></p>
+              </a></li>
+          </ul>
+        </div>
+        <ul class="side_btn">
+          <li class="sec6_prev"><a href="#"></a></li>
+          <li class="sec6_next"><a href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec7">
+      <h1 class="sub_title">BRAND STORY</h1>
+      <div class="sec7_fixed">
+        <h1>라미 2000과 디자인</h1>
+        <p>일상의 물건들은 단순히 기능을 넘어 매력적이고,<br>
+          사람들의 마음을 사로잡는 디자인이어야 합니다.<br><br><br>
+          Dr. Marfred Lamy</p>
+      </div>
+      <div class="bt_line7"></div>
+    </div>
+
+    <div class="sec8">
+      <h1 class="sub_title">ABOUT LAMY</h1>
+      <ul class="about">
+        <li>
+          <a href="#">
+            <img src="images/about1.jpg" alt="브랜드 소개">
+            <h1>브랜드 소개</h1>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/about2.jpg" alt="관리 방법 영상">
+            <h1>관리 방법 영상</h1>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/about3.jpg" alt="매장 안내">
+            <h1>매장 안내</h1>
+          </a>
+        </li>
+      </ul>
+      <div class="bt_line"></div>
+    </div>
+
+    <div class="sec9">
+      <h1 class="sub_title">대량구매</h1>
+      <ul class="buy">
+        <li>
+          <a href="#">
+            <img src="images/buy1.jpg" alt="">
+            <h1>선물 포장</h1>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/buy2.jpg" alt="">
+            <h1>각인 서비스</h1>
+          </a></li>
+        <li>
+          <a href="#">
+            <img src="images/buy3.jpg" alt="">
+            <h1>B2B 큐레이션</h1>
+          </a>
+        </li>
+      </ul>
+      <div class="bt_line"></div>
+    </div>
+  </div>
+
+
+  
+  <div id="footer">
+    <ul class="character">
+      <li>
+        <img src="images/ft_top_icon01.svg" alt="">
+        <p><strong>독일 산</strong></p>
+        <p class="ft_desc">우리는 하이델베르그 출신의 회사로 독일의<br>
+          선도적인 필기구 제조업체 중 하나입니다.</p>
+      </li>
+      <li>
+        <img src="images/ft_top_icon02.svg" alt="">
+        <p><strong>디자인</strong></p>
+        <p class="ft_desc">바우하우스의 "형태는 기능을 따른다"라는 원칙에 <br>
+          따르면, 우리에게 디자인은 순수한 제품 디자인을<br>
+          넘어서는 전체적인 접근 방식입니다.</p>
+      </li>
+      <li>
+        <img src="images/ft_top_icon03.svg" alt="">
+        <p><strong>품질</strong></p>
+        <p class="ft_desc">기술부터 재료, 생산에 이르기까지 당사의 높은 품질<br>
+          기준은 전체 가치 사슬에 걸쳐 적용됩니다.</p>
+      </li>
+      <li><img src="images/ft_top_icon04.svg" alt="">
+        <p><strong>사고 도구</strong></p>
+        <p class="ft_desc">글쓰기, 그림 그리기 도구는 새로운 형태의 표현을<br>
+          창조하고 생각을 구체화하는 데 도움이 됩니다.</p>
+      </li>
+    </ul>
+    <ul class="last_ft">
+      <li>
+        <h3>고객센터</h3>
+        <h1>1661-6825</h1>
+        <p>
+          10:00-17:00 <br>
+          (점심시간 12:00-13:30 / 토, 일, 공휴일 휴무)
+        </p>
+      </li>
+      <li>
+        <h3>내 계정</h3>
+        <ul class="ft_sub">
+          <li><a href="#">마이 쇼핑</a></li>
+          <li><a href="#">회원 정보</a></li>
+          <li><a href="#">배송 주소록 관리</a></li>
+          <li><a href="#">주문 조회</a></li>
+          <li><a href="#">대량구매</a></li>
+        </ul>
+      </li>
+      <li>
+        <h3>고객 문의</h3>
+        <ul class="ft_sub">
+          <li><a href="#">사용 관리법</a></li>
+          <li><a href="#">관리 방법 영상</a></li>
+          <li><a href="#">수리</a></li>
+          <li><a href="#">보증</a></li>
+          <li><a href="#">배송</a></li>
+          <li><a href="#">환불정책</a></li>
+        </ul>
+      </li>
+      <li>
+        <h1 class="logo"><img src="images/ft_logo.svg" alt=""></h1>
+        <ul class="conditions">
+          <li><a href="#">이용안내</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용약관</a></li>
+        </ul>
+        <div class="cond_txt">
+          <p>회사명 : 디케이에스에이치코리아 (주) ｜ 대표자 : KIM GYE RIM</p>
+          <p>사업자등록번호 : 211-81-54987[사업자정보확인] | 통신판매업신고번호 : 제2015-서울강남-02826</p>
+          <p>주소 : 06653 서울특별시 서초구 효령로 267 (서초동) 명인타워 3층(서초동,명인타워)</p>
+          <p>개인정보관리책임자 : 서동국</p>
+        </div>
+        <ul class="ft_sns">
+          <li><img src="images/ft_sns_facebook.svg" alt=""></li>
+          <li><img src="images/ft_sns_instagram.svg" alt=""></li>
+          <li><img src="images/ft_sns_youtube.svg" alt=""></li>
+          <li><img src="images/ft_sns_kakao.svg" alt=""></li>
+        </ul>
+      </li>
+    </ul>
+    <p class="copyr">Copyright 2024 LAMY. All rights reserved</p>
+  </div>
+</body>
+</html>

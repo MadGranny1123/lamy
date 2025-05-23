@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="btn_instagram" transform="translate(-1487.5 -9776.5)">
+    <g id="icon_instagram" transform="translate(1487.995 9777)">
+      <path id="패스_2" data-name="패스 2" d="M18,0H6A6.018,6.018,0,0,0,0,6V18a6.018,6.018,0,0,0,6,6H18a6.018,6.018,0,0,0,6-6V6A6.018,6.018,0,0,0,18,0Zm4,18a4,4,0,0,1-4,4H6a4,4,0,0,1-4-4V6A4,4,0,0,1,6,2H18a4,4,0,0,1,4,4V18Z" fill="#191919"/>
+      <circle id="타원_3" data-name="타원 3" cx="1.5" cy="1.5" r="1.5" transform="translate(17.006 4)" fill="#191919"/>
+      <path id="패스_3" data-name="패스 3" d="M108.4,102.4a6,6,0,1,0,6,6A6,6,0,0,0,108.4,102.4Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,108.4,112.4Z" transform="translate(-96.4 -96.4)" fill="#191919"/>
+    </g>
+    <rect id="영역" width="24" height="24" transform="translate(1488 9777)" fill="#191919" stroke="#999" stroke-width="1" opacity="0"/>
+  </g>
+</svg>
