@@ -5,62 +5,175 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rammy가 LAMY를 클론코딩</title>
   <link rel="stylesheet" href="lamy.css">
+  <script src="https://kit.fontawesome.com/4a5790af4d.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function(){ 
-        //section 4 : BEST
+    $(document).ready(function(){
+      //header 버거메뉴클릭시 메뉴 슬라이드인 
+      $(".hd_ham").click(function(){
+        $(".left_mn").stop().animate({"margin-left":"0px"},400);
+        $(".full_wrap").fadeIn();
+      });
+      $(".topx").click(function(){
+        $(".left_mn").stop().animate({"margin-left":"-572px"},400);
+        $(".full_wrap").fadeOut();
+      });
+      //버거메뉴 속 쇼핑하기 아코디언메뉴
+      $(".left_sub").hide();
+      $(".shop_wrap").click(function(e){
+        e.preventDefault();
+        $(".shop_wrap").siblings(".left_sub").stop().slideToggle(500);
+      });
+
+
+      //section 2 :엑티브슬라이드
+      function updateActiveSlide() {
+        $(".promo > li").removeClass("active");
+        $(".promo > li").eq(1).addClass("active"); // 가운데 슬라이드에만 active
+      }
+
+      //section 2 : promotion 양옆버튼,오토슬라이드
+      $(".next2").click(function(){
+        $(".promo").stop().animate({"margin-left":"-2444px"},400,function(){
+          $(".promo>li").first().appendTo(".promo");
+          $(".promo").css({"margin-left":"-1222px"});
+          updateActiveSlide();
+        });
+      });
+      $(".prev2").click(function(){
+        $(".promo").stop().animate({"margin-left":"0px"},400,function(){
+          $(".promo>li").last().prependTo(".promo");
+          $(".promo").css({"margin-left":"-1222px"});
+          updateActiveSlide();
+        });
+      });
+      setInterval(autoSlide1,3000);
+      function autoSlide1(){
+        $(".promo").stop().animate({"margin-left":"-2444px"},1500,function(){
+        $(".promo>li").first().appendTo(".promo");
+        $(".promo").css({"margin-left":"-1222px"});
+        updateActiveSlide();
+        });
+      }
+      setInterval(autoSlide1,3000);
+      // 최초 실행
+      $(document).ready(function(){
+        updateActiveSlide();
+      });
+
+
+
+      //section 3 : Product line 탭메뉴
+      $(".tap_menu>li").click(function(e){
+        e.preventDefault();
+
+        let i = $(this).index();
+        $(".tap_show>li").hide();
+        $(".tap_show>li").eq(i).show();
+
+        $(".tap_menu>li").removeClass("active")
+        $(".tap_menu>li").eq(i).addClass("active")
+      });
+
+        //section 4 : BEST 
       $(".next4").click(function(){ 
-        $(".panel4").stop().animate({"margin-left":"-698px"},500,function(){
+        $(".panel4").stop().animate({"margin-left":"-738px"},500,function(){
           $(".panel4>li").first().appendTo(".panel4");
           $(".panel4").css({"margin-left":"-369px"});
         });
       });
-      
       $(".prev4").click(function(){
-        $(".panel4").stop().animate({"margin-left":"0px"},500,function(){
+        $(".panel4").stop().animate({"margin-left":"0px"},400,function(){
           $(".panel4>li").last().prependTo(".panel4");
           $(".panel4").css({"margin-left":"-369px"});
         });
       });
 
-      //section 6 : EVENT
+      //section 6 : EVENT 양옆버튼,오토슬라이드
       $(".sec6_next").click(function(){ 
-        $(".panel").stop().animate({"margin-left":"-984px"},500,function(){
+        $(".panel").stop().animate({"margin-left":"-984px"},400,function(){
           $(".panel>li").first().appendTo(".panel");
           $(".panel").css({"margin-left":"-492px"});
         });
       });
-
       $(".sec6_prev").click(function(){
-        $(".panel").stop().animate({"margin-left":"0px"},500,function(){
+        $(".panel").stop().animate({"margin-left":"0px"},400,function(){
           $(".panel>li").last().prependTo(".panel");
           $(".panel").css({"margin-left":"-492px"});
         });
       });
-
-      setInterval(autoSlide,1500);
+      setInterval(autoSlide,3000);
       function autoSlide(){
         $(".panel").stop().animate({"margin-left":"-984px"},1500,function(){
         $(".panel>li").first().appendTo(".panel");
         $(".panel").css({"margin-left":"-492px"});
         });
       }
+
+      // section 8,9 아코디언 - 처음에 JS로 숨김 처리
+      $(".about, .buy").hide();
+      // ABOUT LAMY 토글
+      $(".sub_tt8, .rota_btn1").click(function (e) {
+        e.preventDefault();
+        $(this).closest(".sec8").find(".about").stop().slideToggle(500);
+      });
+      // 대량구매 토글
+      $(".sub_tt9, .rota_btn2").click(function (e) {
+        e.preventDefault();
+        $(this).closest(".sec9").find(".buy").stop().slideToggle(500);
+      });
     });
   </script>
 </head>
 
 <body>
   <div id="header">
-    <ul class="gnb">
-      <li class="hd_ham"><a href="#"><img src="images/hd_ham_btn.svg" alt=""></a></li>
-      <li><a href="#"><h1><img src="images/hd_logo.svg" alt=""></h1></a></li>
-    </ul>
-    <ul class="last_gnb">
-      <li><img src="images/hd_search_btn.svg" alt=""></li>
-      <li><img src="images/hd_cart_btn.svg" alt=""></li>
-      <li><img src="images/hd_mypage_icon.svg" alt=""></li>
-    </ul>
-    
+    <div class="full_wrap"></div>
+    <div class="hgnb_wrap">
+      <ul class="gnb">
+        <li class="hd_ham"><a href="#"><img src="images/hd_ham_btn.svg" alt=""></a></li>
+        <li><a href="#"><h1><img src="images/hd_logo.svg" alt=""></h1></a></li>
+      </ul>
+      <ul class="last_gnb">
+        <li><img src="images/hd_search_btn.svg" alt=""></li>
+        <li><img src="images/hd_cart_btn.svg" alt=""></li>
+        <li><img src="images/hd_mypage_icon.svg" alt=""></li>
+      </ul>
+    </div>
+    <!-- <div class="topfixed_wrap">
+      <ul class="gnb">
+        <li class="hd_ham"><a href="#"><img src="images/hd_ham_btn.svg" alt=""></a></li>
+        <li><a href="#"><h1><img src="images/ft_logo.svg" alt=""></h1></a></li>
+      </ul>
+      <ul class="last_gnb">
+        <li><img src="images/b_btn_search.svg" alt=""></li>
+        <li><img src="images/hd_cart_btn.svg" alt=""></li>
+        <li><img src="images/hd_mypage_icon.svg" alt=""></li>
+      </ul>
+    </div> -->
+    <div class="left_mn">
+      <h2 class="left_logo"><img src="images/ft_logo.svg" alt=""></h2>
+      <ul class="left_gnb">
+        <li><img class="topx" src="images/ham_close_btn.svg" alt=""></li>
+        <li class="shopping">
+          <div class="shop_wrap">
+            <a href="#">쇼핑하기</a>
+            <img class="aco" src="images/ham_close_btn.svg" alt="">
+          </div>
+          <ul class="left_sub">
+            <li><a href="#">신제품</a></li>
+            <li><a href="#">베스트</a></li>
+            <li><a href="#">필기구</a></li>
+            <li><a href="#">액세서리</a></li>
+            <li><a href="#">프로모션</a></li>
+            <li><a href="#">라스트 찬스</a></li>
+          </ul>
+        </li>
+        <li><a href="#">브랜드 체험</a></li>
+        <li><a href="#">어바웃 라미</a></li>
+        <li><a href="#">대량구매</a></li>
+      </ul>
+    </div>
   </div>
 
 
@@ -69,9 +182,8 @@
       <div class="mainvideo">
         <iframe 
           src="https://player.vimeo.com/video/1077833426?h=2c83d2668e&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
-          width="100%"
-          height="1000"
           allowfullscreen
+          frameborder="0"
           >
   </iframe>
       </div>
@@ -82,43 +194,45 @@
     </div>
 
 
-
     <div class="sec2">
       <div class="promotion"><h1>PROMOTION</h1></div>
-      <ul class="promo">
-        <li><a href="#"><img src="images/sec2_bn1.jpg" alt=""></a>
-          <div class="sec2_subtxt">
-            <h1>아이코닉 디자인, 새로운 컬러</h1>
-            <p>따뜻한 산호초를 닮은 선셋, 깊은 바다를 담은 다크 더스크를 만나보세요.</p>
-            <p class="sec2_btn">자세히 보기</p>
-          </div>
-        </li>
-        <li><a href="#"><img src="images/sec2_bn2.jpg" alt=""></a>
-          <div class="sec2_subtxt">
-            <h1>감사의 달 5월</h1>
-            <p>고마운 분들께 전하는 진심. 라미와 함께하는 특별한 5월의 선물 제안</p>
-            <p class="sec2_btn">자세히 보기</p>
-          </div>
-        </li>
-        <li><a href="#"><img src="images/sec2_bn3.jpg" alt=""></a>
-          <div class="sec2_subtxt">
-            <h1>아이를 위한 첫 만년필</h1>
-            <p>처음 글을 배우는 순간부터, 자신 있게 써 내려가는 그다음까지. 아이의 모든 글쓰기, 라미로 시작해보세요.</p>
-            <p class="sec2_btn">자세히 보기</p>
-          </div>
-        </li>
+      <div class="promo_wrap">
+        <ul class="promo">
+          <li><a href="#"><img src="images/sec2_bn1.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>아이코닉 디자인, 새로운 컬러</h1>
+              <p>따뜻한 산호초를 닮은 선셋, 깊은 바다를 담은 다크 더스크를 만나보세요.</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li><a href="#"><img src="images/sec2_bn2.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>감사의 달 5월</h1>
+              <p>고마운 분들께 전하는 진심. 라미와 함께하는 특별한 5월의 선물 제안</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li><a href="#"><img src="images/sec2_bn3.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>아이를 위한 첫 만년필</h1>
+              <p>처음 글을 배우는 순간부터, 자신 있게 써 내려가는 그다음까지. 아이의 모든 글쓰기, 라미로 시작해보세요.</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="sec2side_btn">
+          <li class="prev2"><a href="#"></a></li>
+          <li class="next2"><a href="#"></a></li>
       </ul>
-      <ul class="sec2side_btn">
-        <li class="prev"><a href="#">&lt;</a></li>
-        <li class="next"><a href="#">&gt;</a></li>
-      </ul>
+    </div>
+      
     </div>
 
     <div class="sec3">
       <div class="prd_line"><h1>PRODUCT LINE</h1></div>
       <div class="tap_group">
         <ul class="tap_menu">
-          <li><a href="#">LAMY dialog</a></li>
+          <li class="active"><a href="#">LAMY dialog</a></li>
           <li><a href="#">LAMY imporium</a></li>
           <li><a href="#">LAMY 2000</a></li>
           <li><a href="#">LAMY aion</a></li>
@@ -131,116 +245,212 @@
           <li><a href="#">LAMY swift</a></li>
           <li><a href="#">LAMY abc</a></li>
         </ul>
-        <!-- <ul class="tap_show">
+        <ul class="tap_show">
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1002618908?h=9bbca70bde&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>혁신적인 트위스트 액션 방식</h1>
-              <p>8년 연속 굿 디자인 수상 Lamy dialog.
+              <p>8년 연속 굿 디자인 수상 Lamy dialog. <br>
                 <span>Designed By <ins>Franco Clivio</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1003409553?h=b2ef081223&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>개성과 스타일의 아이콘</h1>
-              <p>입체감과 편안한 그립감을 동시에 Lamy imporium.
+              <p>입체감과 편안한 그립감을 동시에 Lamy imporium. <br>
                 <span>Designed By <ins>Mario Bellini</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+            <iframe src="https://player.vimeo.com/video/1002623518?h=84020d6aad&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+            </iframe>
+          </div>
             <div class="prod_desc">
               <h1>모던 클래식</h1>
-              <p>클래식한 모던함의 대명사 라미 2000.
+              <p>클래식한 모던함의 대명사 라미 2000.<br>
                 <span>Designed By <ins>Gerd A. Muller</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1002618533?h=832095f67e&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>단순하고 모던한</h1>
-              <p>미니멀 하면서 진보된 디테일 Lamy aion.
+              <p>미니멀 하면서 진보된 디테일 Lamy aion.<br>
                 <span>Designed By <ins>Jasper Morrison</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1000284190?h=fc12d9884a&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>시대를 초월한 완벽함</h1>
-              <p>엘레강스한 디자인과 예술이 만난 산물 Lamy studio.
+              <p>엘레강스한 디자인과 예술이 만난 산물 Lamy studio.<br>
                 <span>Designed By <ins>Hannes Wettstein</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1002618170?h=24ee135644&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>개성의 표현</h1>
-              <p>교체 가능한 그립으로 다양한 스타일 Lamy accent.
+              <p>교체 가능한 그립으로 다양한 스타일 Lamy accent.<br>
                 <span>Designed By <ins>Phoenix product design</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1003410062?h=05ea4bc96d&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>럭셔리 스타일</h1>
-              <p>기능성과 우아함의 완벽한 조화 Lamy Lx.
+              <p>기능성과 우아함의 완벽한 조화 Lamy Lx.<br>
                 <span>Designed By <ins>Gerd A. Muller</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1003408366?h=21e683be40&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>초경량 알루미늄 기술</h1>
-              <p>광택의 우아함 Lamy Al-star.
+              <p>광택의 우아함 Lamy Al-star.<br>
                 <span>Designed By <ins>Wolfgang Fabian</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1003410293?h=ec100c7f39&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>차원이 다른 필기감</h1>
-              <p>자타가 공인하는 베스트셀러 Lamy safari.
+              <p>자타가 공인하는 베스트셀러 Lamy safari.<br>
                 <span>Designed By <ins>Wolfgang Fabian</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1002623910?h=40952b097a&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>놀랍도록 실용적인</h1>
-              <p>섬세한 푸시 메커니즘을 갖춘 Lamy pico.
+              <p>섬세한 푸시 메커니즘을 갖춘 Lamy pico.<br>
                 <span>Designed By <ins>Franco Clivio</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1000284593?h=586ea83265&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>시선을 사로잡는 디자인</h1>
-              <p>필기감의 장점만을 극대화한 Lamy swift.
+              <p>필기감의 장점만을 극대화한 Lamy swift.<br>
                 <span>Designed By <ins>Wolfgang Fabian</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
           <li>
+            <div class="tab_bgvideo">
+              <iframe src="https://player.vimeo.com/video/1003407597?h=8ad8e004d3&background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&quality=4k"
+              width="99.5%"
+              height="700"
+              allowfullscreen
+              frameborder="0">
+              </iframe>
+            </div>
             <div class="prod_desc">
               <h1>라미로 배우는 abc</h1>
-              <p>자신만의 서체를 만들어가는 아동을 위한 제품 LAMY abc.
+              <p>자신만의 서체를 만들어가는 아동을 위한 제품 LAMY abc.<br>
                 <span>Designed By <ins>Entwicklungsgruppe Mannheim / Prof. Bernt Spiegel</ins></span>
               </p>
               <p class="sec3_btn">자세히 보기</p>
             </div>
           </li>
-        </ul> -->
+        </ul>
       </div>     
     </div>
 
@@ -397,7 +607,10 @@
     </div>
 
     <div class="sec8">
-      <h1 class="sub_title">ABOUT LAMY</h1>
+      <div class="rota_btn1">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <h1 class="sub_tt8">ABOUT LAMY</h1>
       <ul class="about">
         <li>
           <a href="#">
@@ -422,7 +635,10 @@
     </div>
 
     <div class="sec9">
-      <h1 class="sub_title">대량구매</h1>
+      <div class="rota_btn2">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <h1 class="sub_tt9">대량구매</h1>
       <ul class="buy">
         <li>
           <a href="#">
