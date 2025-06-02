@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rammy가 LAMY를 클론코딩</title>
   <link rel="stylesheet" href="lamy.css">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/4a5790af4d.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
+
     $(document).ready(function(){
       //header 버거메뉴클릭시 메뉴 슬라이드인 
       $(".hd_ham").click(function(){
@@ -34,32 +36,32 @@
 
       //section 2 : promotion 양옆버튼,오토슬라이드
       $(".next2").click(function(){
-        $(".promo").stop().animate({"margin-left":"-2444px"},400,function(){
+        $(".promo").stop().animate({"margin-left":"-2199px"},500,function(){
           $(".promo>li").first().appendTo(".promo");
-          $(".promo").css({"margin-left":"-1222px"});
+          $(".promo").css({"margin-left":"-997px"});
           updateActiveSlide();
         });
       });
       $(".prev2").click(function(){
-        $(".promo").stop().animate({"margin-left":"0px"},400,function(){
+        $(".promo").stop().animate({"margin-left":"215px"},500,function(){
           $(".promo>li").last().prependTo(".promo");
-          $(".promo").css({"margin-left":"-1222px"});
+          $(".promo").css({"margin-left":"-997px"});
           updateActiveSlide();
         });
       });
       setInterval(autoSlide1,3000);
       function autoSlide1(){
-        $(".promo").stop().animate({"margin-left":"-2444px"},1500,function(){
+        $(".promo").stop().animate({"margin-left":"-2199px"},500,function(){
         $(".promo>li").first().appendTo(".promo");
-        $(".promo").css({"margin-left":"-1222px"});
-        updateActiveSlide();
+        $(".promo").css({"margin-left":"-997px"});
+        // updateActiveSlide();
         });
       }
-      setInterval(autoSlide1,3000);
+      // setInterval(autoSlide1,3000);
       // 최초 실행
-      $(document).ready(function(){
-        updateActiveSlide();
-      });
+      
+        // updateActiveSlide();
+    
 
 
 
@@ -196,6 +198,10 @@
 
     <div class="sec2">
       <div class="promotion"><h1>PROMOTION</h1></div>
+
+
+
+      <!-- ------------------------ -->
       <div class="promo_wrap">
         <ul class="promo">
           <li><a href="#"><img src="images/sec2_bn1.jpg" alt=""></a>
@@ -219,7 +225,30 @@
               <p class="sec2_btn">자세히 보기</p>
             </div>
           </li>
+          <li><a href="#"><img src="images/sec2_bn1.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>아이코닉 디자인, 새로운 컬러</h1>
+              <p>따뜻한 산호초를 닮은 선셋, 깊은 바다를 담은 다크 더스크를 만나보세요.</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li><a href="#"><img src="images/sec2_bn2.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>감사의 달 5월</h1>
+              <p>고마운 분들께 전하는 진심. 라미와 함께하는 특별한 5월의 선물 제안</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
+          <li><a href="#"><img src="images/sec2_bn3.jpg" alt=""></a>
+            <div class="sec2_subtxt">
+              <h1>아이를 위한 첫 만년필</h1>
+              <p>처음 글을 배우는 순간부터, 자신 있게 써 내려가는 그다음까지. 아이의 모든 글쓰기, 라미로 시작해보세요.</p>
+              <p class="sec2_btn">자세히 보기</p>
+            </div>
+          </li>
         </ul>
+
+
         <ul class="sec2side_btn">
           <li class="prev2"><a href="#"></a></li>
           <li class="next2"><a href="#"></a></li>
@@ -624,6 +653,7 @@
             <h1>관리 방법 영상</h1>
           </a>
         </li>
+
         <li>
           <a href="#">
             <img src="images/about3.jpg" alt="매장 안내">
@@ -668,25 +698,25 @@
     <ul class="character">
       <li>
         <img src="images/ft_top_icon01.svg" alt="">
-        <p><strong>독일 산</strong></p>
+        <p class="st_main"><strong>독일 산</strong></p>
         <p class="ft_desc">우리는 하이델베르그 출신의 회사로 독일의<br>
           선도적인 필기구 제조업체 중 하나입니다.</p>
       </li>
       <li>
         <img src="images/ft_top_icon02.svg" alt="">
-        <p><strong>디자인</strong></p>
+        <p class="st_main"><strong>디자인</strong></p>
         <p class="ft_desc">바우하우스의 "형태는 기능을 따른다"라는 원칙에 <br>
           따르면, 우리에게 디자인은 순수한 제품 디자인을<br>
           넘어서는 전체적인 접근 방식입니다.</p>
       </li>
       <li>
         <img src="images/ft_top_icon03.svg" alt="">
-        <p><strong>품질</strong></p>
+        <p class="st_main"><strong>품질</strong></p>
         <p class="ft_desc">기술부터 재료, 생산에 이르기까지 당사의 높은 품질<br>
           기준은 전체 가치 사슬에 걸쳐 적용됩니다.</p>
       </li>
       <li><img src="images/ft_top_icon04.svg" alt="">
-        <p><strong>사고 도구</strong></p>
+        <p class="st_main"><strong>사고 도구</strong></p>
         <p class="ft_desc">글쓰기, 그림 그리기 도구는 새로운 형태의 표현을<br>
           창조하고 생각을 구체화하는 데 도움이 됩니다.</p>
       </li>
@@ -722,10 +752,10 @@
         </ul>
       </li>
       <li>
-        <h1 class="logo"><img src="images/ft_logo.svg" alt=""></h1>
+        <h1 class="f_logo"><a href="index.html"><img src="images/ft_logo.svg" alt=""></a></h1>
         <ul class="conditions">
-          <li><a href="#">이용안내</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용안내 <span>｜</span></a></li>
+          <li><a href="#">개인정보처리방침 <span>｜</span></a></li>
           <li><a href="#">이용약관</a></li>
         </ul>
         <div class="cond_txt">

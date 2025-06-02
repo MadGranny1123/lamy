@@ -5,12 +5,13 @@ a{color:#000; text-decoration: none;}
 img{border:0; vertical-align: top;}
 iframe{border: none;}
 body{overflow-x: hidden;}
+body{font-family: 'Pretendard';}
 
 #header{
   width: 100%; height: auto;
 }
 #header .full_wrap{
-  width: 100%; height: 8515px;
+  width: 100%; height: 7200px;
   background-color: #00000083;
   position: absolute;
   z-index: 250;
@@ -41,27 +42,9 @@ body{overflow-x: hidden;}
   width: 110px;
   margin-left: -100px;
 }
-
-/* #header .topfixed_wrap{
-  width: 100%; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 20px;
-  position: absolute; left: 0; top: 0;
-  z-index: 56;
-  transition: all 0.3s ease;
-  background-color: rgb(255, 255, 255);
-  display: none;
+#header .last_gnb li{
+  cursor: pointer;
 }
-#header .topfixed_wrap .hd_ham{
-  filter: brightness(0);
-}
-#header .topfixed_wrap .last_gnb{
-  margin-right: 100px;
-  filter: brightness(0);
-} */
-
 
 #header .left_mn{
   width: 30%;
@@ -149,58 +132,60 @@ body{overflow-x: hidden;}
 /* -------------------sec2------------------------- */
 #section .sec2{
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 #section .sec2 .promotion{ 
-  margin-left: 235px;
+  margin-left: 225px;
   font-size: 1.8em;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   margin-top: 150px;
   margin-bottom: 20px;
 }
+#section .sec2 .promotion h1{
+  font-weight: 900;
+}
 #section .sec2 .promo_wrap{
-  width: 1212px; height: 730px;
-  margin-left: 225px;
+  width: 100%; height: 730px;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+  /* background-color: antiquewhite; */
+}
+#section .sec2 .promo_wrap::before{
+  content:"";
+  display: block;
+  height: 515px; width: 210px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  left:0; top:0;
+}
+#section .sec2 .promo_wrap::after{
+    content:"";
+  display: block;
+  height: 515px; width: 475px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  right:0; top:0;
 }
 #section .sec2 .promo{
   display: flex;
-  width: 3666px;
-  margin-left: -1212px;
+  width: 7272px;
+  margin-left: -997px;
 }
 #section .sec2 .promo img{width: 1192px;}
 #section .sec2 .promo>li{
   width: 1212px;
-  padding:0 10px;
-  transition: filter 0.3s, opacity 0.3s;
+  margin:0 10px;
 }
 #section .sec2 .promo .sec2_subtxt{
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+  padding-left: 30px;
+  transition: all 0.3s;
 }
-/* 가운데 슬라이드에 강조 효과 줄 클래스 */
-#section .sec2 .promo > li.active {
-  filter: none;
-}
-#section .sec2 .promo > li.active .sec2_subtxt {
+#section .sec2 .promo>li:nth-child(2) .sec2_subtxt{
   opacity: 1;
-  pointer-events: auto;
+  padding-left: 70px;
 }
 
-/* 양옆 슬라이드는 흐림 처리 */
-#section .sec2 .promo > li:not(.active) {
-  filter: blur(3px) brightness(1);
-}
-#section .sec2 .promo > li:not(.active)::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.4); /* ✨ 반투명 흰색 */
-  z-index: 2;
-  pointer-events: none;
-}
 #section .sec2 .promo .sec2_subtxt h1{
   margin-top: 28px;
   font-size: 2.5em;
@@ -229,18 +214,19 @@ body{overflow-x: hidden;}
   position: absolute; top:30%;
   font-size: 5em;
   cursor: pointer;
+  z-index: 100;
 }
 #section .sec2 .sec2side_btn>li.prev2{
-  left: -5%;
+  left: 150px;
   width: 28px; height: 28px;
-  border-bottom: 3px solid rgb(218, 218, 218);
-  border-left: 3px solid rgb(218, 218, 218);
+  border-bottom: 3px solid rgb(151, 151, 151);
+  border-left: 3px solid rgb(151, 151, 151);
 }
 #section .sec2 .sec2side_btn>li.next2{
-  right: -25%;
+  right: 150px;
   width: 28px; height: 28px;
-  border-top: 3px solid rgb(218, 218, 218);
-  border-right: 3px solid rgb(218, 218, 218);
+  border-top: 3px solid rgb(151, 151, 151);
+  border-right: 3px solid rgb(151, 151, 151);
 }
 
 #section .sec2 .sec2side_btn>li:hover{
@@ -254,7 +240,10 @@ body{overflow-x: hidden;}
   margin-top: 110px;
   margin-bottom: 20px;
   font-size: 1.8em;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
+}
+#section .sec3 .prd_line h1{
+  font-weight: 900;
 }
 #section .sec3 .tap_group{
   width: 100%;
@@ -339,7 +328,7 @@ body{overflow-x: hidden;}
   width: 1436px; margin: 0 auto;
   height: 471px;
   overflow: hidden;
-  margin-left: -20px;
+  margin-left: -30px;
 }
 #section .sec4 .carousel_best .panel_wrap4 .panel4{
   display: flex;
@@ -509,9 +498,16 @@ body{overflow-x: hidden;}
 #section .sec6 .sub_title,
 #section .sec7 .sub_title{
   margin-left: 225px;
-  font-size: 3.7em;
-  letter-spacing: -3px;
+  font-size: 3.5em;
+  letter-spacing: -2px;
   margin-bottom: 20px;
+}
+#section .sec4 h1.sub_title ,
+#section .sec5 h1.sub_title ,
+#section .sec6 h1.sub_title ,
+#section .sec7 h1.sub_title {
+  font-weight: 800;
+  color: #191919;
 }
 #section .sec7{
   width: 100%;
@@ -559,6 +555,10 @@ body{overflow-x: hidden;}
   letter-spacing: -1px;
   margin-bottom: 20px;
   cursor: pointer;
+  color: #191919;
+}
+#section .sec8 h1.sub_tt8{
+  font-weight: 800;
 }
 #section .sec8 .rota_btn1 i,
 #section .sec9 .rota_btn2 i{
@@ -575,7 +575,7 @@ body{overflow-x: hidden;}
 #section .sec8 .rota_btn1,
 #section .sec9 .rota_btn2{
   position: absolute; 
-  left:160px; top: 10px;
+  left:160px; top: 0px;
   cursor: pointer;
 }
 #section .sec8 .rota_btn1:hover i,
@@ -583,8 +583,6 @@ body{overflow-x: hidden;}
   transform: rotate(180deg);
   color: rgb(109, 109, 109);
   border: 2px solid rgb(109,109,109);
-
-
 }
 
 #section .sec8 .about,
@@ -605,6 +603,7 @@ body{overflow-x: hidden;}
 #footer{
   width: 100%;
   overflow: hidden;
+  color: #191919;
 }
 #footer .character{
   width: 1450px; margin:0 auto;
@@ -625,16 +624,26 @@ body{overflow-x: hidden;}
 #footer .character>li img{
   margin-bottom: 20px;
 }
+#footer .character>li .st_main{
+  font-size: 17px;
+  margin-bottom: 10px;
+}
 #footer .character>li .ft_desc{
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 8px;
   letter-spacing: -1px;
 }
+
+/* -------------------------------------------- */
 #footer .last_ft{
   width: 1450px; margin:0 auto;
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  color: #191919;
+}
+#footer .last_ft>li h3{
+  font-size: 20px;
 }
 #footer .last_ft>li:nth-child(2){
   margin-left: -40px;
@@ -646,25 +655,34 @@ body{overflow-x: hidden;}
   margin-top: 20px;
   line-height: 30px;
   font-size: 1.1em;
-  
 }
 #footer .last_ft .ft_sub a{
   color: rgb(83, 83, 83);
+  font-size: 18px;
 }
-#footer .last_ft h1{
+#footer .last_ft>li h1{
   font-size: 2.7em;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+#footer .last_ft .f_logo{
+  cursor: pointer;
 }
 #footer .last_ft .conditions{
-  width: 300px;
+  width: 270px;
   display: flex;
   justify-content: space-between;
 }
+#footer .last_ft .conditions span{
+  color: rgb(153, 153, 153);
+  font-weight: 100;
+}
 #footer .last_ft .cond_txt{
-  font-size: 0.83em;
+  font-size: 0.9em;
   margin-top: 20px;
   color: #2e2e2e;
+  line-height: 25px;
 }
 #footer .last_ft .ft_sns{
   display: flex;
